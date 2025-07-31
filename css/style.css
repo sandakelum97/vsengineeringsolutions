@@ -1,0 +1,186 @@
+/* --- Google Fonts --- */
+/* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Teko', sans-serif; */
+
+/* --- Custom Variables --- */
+:root {
+    --primary-color: #f7ca00; /* Yellow from lightning bolt */
+    --secondary-color: #e63946; /* Red from 'E' */
+    --accent-color: #87CEEB; /* Light blue from 'VS' outline */
+    --dark-bg: #121212;
+    --light-bg: #f8f9fa;
+    --text-light: #ffffff;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+}
+
+/* --- General Styles --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .display-3 {
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+#about .section-title::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
+}
+
+.nav-link {
+    color: var(--text-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+}
+
+.hero-section .display-3 {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-dark);
+    font-weight: bold;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ffde4d;
+    border-color: #ffde4d;
+    transform: translateY(-2px);
+}
+
+/* --- About Section --- */
+#about .list-unstyled i {
+    color: var(--primary-color);
+}
+
+/* --- Services Section --- */
+#services {
+    background-color: var(--light-bg);
+}
+
+.service-card {
+    background-color: var(--text-light);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.service-card .card-title {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+}
+
+.service-card-unique {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+.service-card-unique .card-title {
+    color: var(--primary-color);
+}
+
+.service-card-unique i {
+    color: var(--primary-color);
+}
+
+
+/* --- Contact Section --- */
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.contact-info i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.contact-info a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.contact-info a:hover {
+    color: var(--primary-color);
+}
+.form-control {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(247, 202, 0, 0.25);
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-bg);
+}
+
+/* --- Animations --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
