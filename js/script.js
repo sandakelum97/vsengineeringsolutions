@@ -15,33 +15,38 @@ document.querySelectorAll(".nav-link").forEach((link) => {
   })
 })
 
-// Dark Theme Toggle - Enhanced version
+// Dark Theme Toggle - Enhanced and Fixed version
 const themeToggle = document.getElementById("theme-toggle")
 const themeIcon = document.getElementById("theme-icon")
 const body = document.body
 
 // Check for saved theme preference or default to 'light'
-const currentTheme = localStorage.getItem("theme") || "light"
+const savedTheme = localStorage.getItem("theme") || "light"
 
 // Apply the saved theme on page load
 function applyTheme(theme) {
+  console.log("Applying theme:", theme) // Debug log
+
   if (theme === "dark") {
     body.setAttribute("data-theme", "dark")
+    document.documentElement.setAttribute("data-theme", "dark")
     themeIcon.classList.remove("fa-moon")
     themeIcon.classList.add("fa-sun")
   } else {
     body.setAttribute("data-theme", "light")
+    document.documentElement.setAttribute("data-theme", "light")
     themeIcon.classList.remove("fa-sun")
     themeIcon.classList.add("fa-moon")
   }
 }
 
-// Initialize theme
-applyTheme(currentTheme)
+// Initialize theme immediately
+applyTheme(savedTheme)
 
 // Theme toggle functionality with enhanced animation
 themeToggle.addEventListener("click", () => {
   const currentTheme = body.getAttribute("data-theme")
+  console.log("Current theme:", currentTheme) // Debug log
 
   // Add loading state
   themeToggle.style.pointerEvents = "none"
@@ -50,6 +55,7 @@ themeToggle.addEventListener("click", () => {
     // Switch to light theme
     applyTheme("light")
     localStorage.setItem("theme", "light")
+    console.log("Switched to light theme") // Debug log
 
     // Animation
     themeToggle.style.transform = "rotate(360deg)"
@@ -57,6 +63,7 @@ themeToggle.addEventListener("click", () => {
     // Switch to dark theme
     applyTheme("dark")
     localStorage.setItem("theme", "dark")
+    console.log("Switched to dark theme") // Debug log
 
     // Animation
     themeToggle.style.transform = "rotate(-360deg)"
@@ -69,21 +76,21 @@ themeToggle.addEventListener("click", () => {
   }, 300)
 })
 
-// Enhanced electrical sparks animation
+// Enhanced electrical sparks animation with more visibility
 function createAdditionalSparks() {
   const sparksContainer = document.querySelector(".electrical-sparks")
   if (!sparksContainer) return
 
-  // Create additional random sparks
-  for (let i = 7; i <= 12; i++) {
+  // Create additional random sparks with enhanced visibility
+  for (let i = 7; i <= 15; i++) {
     const spark = document.createElement("div")
     spark.className = `spark spark-${i}`
     spark.style.top = Math.random() * 100 + "%"
     spark.style.left = Math.random() * 100 + "%"
-    spark.style.animationDuration = Math.random() * 3 + 2 + "s"
-    spark.style.animationDelay = Math.random() * 3 + "s"
-    spark.style.animation = `sparkle ${Math.random() * 3 + 2}s infinite ease-in-out`
-    spark.style.animationDelay = Math.random() * 3 + "s"
+    spark.style.animationDuration = Math.random() * 2 + 1.5 + "s" // Faster animation
+    spark.style.animationDelay = Math.random() * 2 + "s"
+    spark.style.animation = `sparkle ${Math.random() * 2 + 1.5}s infinite ease-in-out`
+    spark.style.animationDelay = Math.random() * 2 + "s"
     sparksContainer.appendChild(spark)
   }
 }
@@ -307,8 +314,16 @@ window.addEventListener("scroll", () => {
   scrollProgress.style.width = scrollPercent + "%"
 })
 
-// Watch for theme changes
-const themeObserver = new MutationObserver(updateProgressBarTheme)
+// Watch for theme changes and update background
+const themeObserver = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    if (mutation.attributeName === "data-theme") {
+      updateProgressBarTheme()
+      optimizeBackgroundImage() // Update background on theme change
+    }
+  })
+})
+
 themeObserver.observe(document.body, {
   attributes: true,
   attributeFilter: ["data-theme"],
@@ -423,10 +438,10 @@ function lazyLoadImages() {
   images.forEach((img) => imageObserver.observe(img))
 }
 
-// Optimize animations based on device capability
+// Optimize animations based on device capability - Keep sparks visible
 function optimizeAnimations() {
   if (isMobile || isLowEndDevice) {
-    // Disable complex animations
+    // Disable complex animations but keep sparks
     document.documentElement.style.setProperty("--animation-duration", "0.2s")
 
     // Remove parallax effects
@@ -438,10 +453,10 @@ function optimizeAnimations() {
       }
     })
 
-    // Disable electrical sparks
+    // Keep electrical sparks visible on mobile
     const sparks = document.querySelector(".electrical-sparks")
     if (sparks) {
-      sparks.style.display = "none"
+      sparks.style.display = "block" // Keep visible
     }
   }
 }
@@ -588,14 +603,20 @@ function networkAwareOptimizations() {
   }
 }
 
-// Optimize background image loading
+// Optimize background image loading with theme support
 function optimizeBackgroundImage() {
   const hero = document.querySelector(".hero")
   if (hero) {
     // Create a new image element to preload
     const bgImage = new Image()
     bgImage.onload = () => {
-      hero.style.backgroundImage = `linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(226, 232, 240, 0.95) 100%), url('images/electrical-background.jpg')`
+      const currentTheme = document.body.getAttribute("data-theme")
+
+      if (currentTheme === "dark") {
+        hero.style.backgroundImage = `linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.75) 100%), url('images/electrical-background.jpg')`
+      } else {
+        hero.style.backgroundImage = `linear-gradient(135deg, rgba(248, 250, 252, 0.75) 0%, rgba(226, 232, 240, 0.75) 100%), url('images/electrical-background.jpg')`
+      }
       hero.classList.add("bg-loaded")
     }
     bgImage.src = "images/electrical-background.jpg"
