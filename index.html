@@ -2,20 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="description" content="VS Engineering Solutions - Professional electrical engineering services including VS Fan brand, AC installation, electrical wiring, equipment repair, and aluminum fabrication. Available 24/7.">
     <meta name="keywords" content="electrical engineering, VS Fan, AC installation, CCTV, electrical wiring, motor rewinding, aluminum fabrication, Sri Lanka">
     <title>VS Engineering Solutions - Professional Electrical Engineering Services</title>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="images/logo.jpg" as="image">
+    <link rel="preload" href="images/electrical-background.jpg" as="image">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="electrical-sparks">
+        <div class="spark spark-1"></div>
+        <div class="spark spark-2"></div>
+        <div class="spark spark-3"></div>
+        <div class="spark spark-4"></div>
+        <div class="spark spark-5"></div>
+        <div class="spark spark-6"></div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="images/logo.jpg" alt="VS Engineering Solutions Logo" class="logo-img">
+                <img src="images/logo.jpg" alt="VS Engineering Solutions Logo" class="logo-img" loading="lazy">
                 <span class="logo-text">VS Engineering Solutions</span>
             </div>
             <ul class="nav-menu" id="nav-menu">
@@ -313,7 +331,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="images/logo.jpg" alt="VS Engineering Solutions Logo" class="footer-logo-img">
+                        <img src="images/logo.jpg" alt="VS Engineering Solutions Logo" class="footer-logo-img" loading="lazy">
                         <span class="footer-logo-text">VS Engineering Solutions</span>
                     </div>
                     <p>Professional electrical engineering solutions with 24/7 availability. Your trusted partner since 2021.</p>
@@ -349,14 +367,14 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 VS Engineering Solutions. All rights reserved.</p>
-                <footer class="bg-dark text-white text-center py-4">
-                <p>Developed by <a href="https://www.taratekglobal.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Taratek Global</a></p>
-    </div>
-</footer>
+            </div>
+            <div class="developer-credit">
+                <p>Developed by <a href="https://www.taratekglobal.com/" target="_blank" rel="noopener noreferrer">Taratek Global</a></p>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/performance-monitor.js" defer></script>
 </body>
 </html>
