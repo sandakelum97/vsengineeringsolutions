@@ -15,65 +15,48 @@ document.querySelectorAll(".nav-link").forEach((link) => {
   })
 })
 
-// Dark Theme Toggle - Enhanced and Fixed version
+// Dark Theme Toggle - Completely Fixed and Simplified
 const themeToggle = document.getElementById("theme-toggle")
 const themeIcon = document.getElementById("theme-icon")
-const body = document.body
 
-// Check for saved theme preference or default to 'light'
-const savedTheme = localStorage.getItem("theme") || "light"
+// Initialize theme on page load
+let isDarkTheme = localStorage.getItem("theme") === "dark"
 
-// Apply the saved theme on page load
-function applyTheme(theme) {
-  console.log("Applying theme:", theme) // Debug log
+function setTheme(dark) {
+  console.log("Setting theme to:", dark ? "dark" : "light")
 
-  if (theme === "dark") {
-    body.setAttribute("data-theme", "dark")
-    document.documentElement.setAttribute("data-theme", "dark")
-    themeIcon.classList.remove("fa-moon")
-    themeIcon.classList.add("fa-sun")
+  if (dark) {
+    document.body.setAttribute("data-theme", "dark")
+    themeIcon.className = "fas fa-sun"
+    localStorage.setItem("theme", "dark")
   } else {
-    body.setAttribute("data-theme", "light")
-    document.documentElement.setAttribute("data-theme", "light")
-    themeIcon.classList.remove("fa-sun")
-    themeIcon.classList.add("fa-moon")
+    document.body.removeAttribute("data-theme")
+    themeIcon.className = "fas fa-moon"
+    localStorage.setItem("theme", "light")
   }
+
+  isDarkTheme = dark
 }
 
-// Initialize theme immediately
-applyTheme(savedTheme)
+// Apply saved theme immediately
+setTheme(isDarkTheme)
 
-// Theme toggle functionality with enhanced animation
+// Theme toggle click handler
 themeToggle.addEventListener("click", () => {
-  const currentTheme = body.getAttribute("data-theme")
-  console.log("Current theme:", currentTheme) // Debug log
+  console.log("Theme toggle clicked. Current:", isDarkTheme ? "dark" : "light")
 
-  // Add loading state
-  themeToggle.style.pointerEvents = "none"
+  // Toggle theme
+  setTheme(!isDarkTheme)
 
-  if (currentTheme === "dark") {
-    // Switch to light theme
-    applyTheme("light")
-    localStorage.setItem("theme", "light")
-    console.log("Switched to light theme") // Debug log
+  // Add rotation animation
+  themeToggle.style.transform = isDarkTheme ? "rotate(-360deg)" : "rotate(360deg)"
 
-    // Animation
-    themeToggle.style.transform = "rotate(360deg)"
-  } else {
-    // Switch to dark theme
-    applyTheme("dark")
-    localStorage.setItem("theme", "dark")
-    console.log("Switched to dark theme") // Debug log
-
-    // Animation
-    themeToggle.style.transform = "rotate(-360deg)"
-  }
-
-  // Reset animation and enable clicks
+  // Reset animation
   setTimeout(() => {
     themeToggle.style.transform = "rotate(0deg)"
-    themeToggle.style.pointerEvents = "auto"
   }, 300)
+
+  console.log("Theme changed to:", isDarkTheme ? "dark" : "light")
 })
 
 // Enhanced electrical sparks animation with more visibility
@@ -280,10 +263,9 @@ window.addEventListener("load", () => {
 
 // Enhanced scroll progress with theme awareness
 function updateProgressBarTheme() {
-  const currentTheme = document.body.getAttribute("data-theme")
   const scrollProgress = document.querySelector(".scroll-progress")
   if (scrollProgress) {
-    if (currentTheme === "dark") {
+    if (isDarkTheme) {
       scrollProgress.style.background = "linear-gradient(90deg, #60a5fa, #fbbf24)"
     } else {
       scrollProgress.style.background = "linear-gradient(90deg, #2563eb, #fbbf24)"
@@ -312,21 +294,6 @@ window.addEventListener("scroll", () => {
   const docHeight = document.body.scrollHeight - window.innerHeight
   const scrollPercent = (scrollTop / docHeight) * 100
   scrollProgress.style.width = scrollPercent + "%"
-})
-
-// Watch for theme changes and update background
-const themeObserver = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    if (mutation.attributeName === "data-theme") {
-      updateProgressBarTheme()
-      optimizeBackgroundImage() // Update background on theme change
-    }
-  })
-})
-
-themeObserver.observe(document.body, {
-  attributes: true,
-  attributeFilter: ["data-theme"],
 })
 
 // Initial call
@@ -461,36 +428,6 @@ function optimizeAnimations() {
   }
 }
 
-// Optimize theme toggle for mobile
-const optimizedThemeToggle = debounce(() => {
-  const currentTheme = body.getAttribute("data-theme")
-
-  if (currentTheme === "dark") {
-    applyTheme("light")
-    localStorage.setItem("theme", "light")
-  } else {
-    applyTheme("dark")
-    localStorage.setItem("theme", "dark")
-  }
-
-  // Simplified animation for mobile
-  if (isMobile) {
-    themeToggle.style.transform = "scale(0.9)"
-    setTimeout(() => {
-      themeToggle.style.transform = "scale(1)"
-    }, 150)
-  } else {
-    themeToggle.style.transform = currentTheme === "dark" ? "rotate(360deg)" : "rotate(-360deg)"
-    setTimeout(() => {
-      themeToggle.style.transform = "rotate(0deg)"
-    }, 300)
-  }
-}, 300)
-
-// Replace theme toggle event listener
-themeToggle.removeEventListener("click", () => {})
-themeToggle.addEventListener("click", optimizedThemeToggle)
-
 // Optimize form interactions for mobile
 function optimizeMobileForm() {
   const formInputs = document.querySelectorAll("input, textarea, select")
@@ -603,43 +540,6 @@ function networkAwareOptimizations() {
   }
 }
 
-// Optimize background image loading with theme support
-function optimizeBackgroundImage() {
-  const hero = document.querySelector(".hero")
-  if (hero) {
-    // Create a new image element to preload
-    const bgImage = new Image()
-    bgImage.onload = () => {
-      const currentTheme = document.body.getAttribute("data-theme")
-
-      if (currentTheme === "dark") {
-        hero.style.backgroundImage = `linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.75) 100%), url('images/electrical-background.jpg')`
-      } else {
-        hero.style.backgroundImage = `linear-gradient(135deg, rgba(248, 250, 252, 0.75) 0%, rgba(226, 232, 240, 0.75) 100%), url('images/electrical-background.jpg')`
-      }
-      hero.classList.add("bg-loaded")
-    }
-    bgImage.src = "images/electrical-background.jpg"
-  }
-}
-
-// Add CSS for smooth background loading
-const bgStyle = document.createElement("style")
-bgStyle.textContent = `
-  .hero {
-    transition: background-image 0.3s ease;
-  }
-  
-  .hero.bg-loaded {
-    background-image: linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(226, 232, 240, 0.95) 100%), url('images/electrical-background.jpg') !important;
-  }
-  
-  [data-theme="dark"] .hero.bg-loaded {
-    background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%), url('images/electrical-background.jpg') !important;
-  }
-`
-document.head.appendChild(bgStyle)
-
 // Initialize optimizations
 document.addEventListener("DOMContentLoaded", () => {
   optimizeAnimations()
@@ -650,7 +550,6 @@ document.addEventListener("DOMContentLoaded", () => {
   conditionalFeatureLoading()
   networkAwareOptimizations()
   lazyLoadImages()
-  optimizeBackgroundImage()
 })
 
 // Optimize resize handling
