@@ -312,7 +312,7 @@ body {
 /* Hero Section */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, rgba(248, 250, 252, 0.75) 0%, rgba(226, 232, 240, 0.75) 100%),
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.4) 0%, rgba(226, 232, 240, 0.4) 100%),
     url("../images/electrical-background.jpg");
   background-size: cover;
   background-position: center;
@@ -325,7 +325,7 @@ body {
 }
 
 [data-theme="dark"] .hero {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.75) 100%),
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.4) 0%, rgba(30, 41, 59, 0.4) 100%),
     url("../images/electrical-background.jpg");
   background-size: cover;
   background-position: center;
@@ -1271,7 +1271,7 @@ body {
 /* Mobile optimizations for hero background */
 @media screen and (max-width: 768px) {
   .hero {
-    background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(226, 232, 240, 0.8) 100%),
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.5) 0%, rgba(226, 232, 240, 0.5) 100%),
       url("../images/electrical-background.jpg");
     background-attachment: scroll;
     background-size: cover;
@@ -1279,7 +1279,7 @@ body {
   }
 
   [data-theme="dark"] .hero {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%),
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 41, 59, 0.5) 100%),
       url("../images/electrical-background.jpg");
     background-attachment: scroll;
   }
@@ -1287,14 +1287,14 @@ body {
 
 @media screen and (max-width: 480px) {
   .hero {
-    background: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(226, 232, 240, 0.85) 100%),
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.6) 0%, rgba(226, 232, 240, 0.6) 100%),
       url("../images/electrical-background.jpg");
     background-size: cover;
     background-position: center;
   }
 
   [data-theme="dark"] .hero {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.85) 100%),
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.6) 100%),
       url("../images/electrical-background.jpg");
   }
 }
