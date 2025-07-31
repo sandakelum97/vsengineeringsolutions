@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://vsengineering.lk/</loc>
+        <lastmod>2024-01-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- About Section -->
+    <url>
+        <loc>https://vsengineering.lk/#about</loc>
+        <lastmod>2024-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Services Section -->
+    <url>
+        <loc>https://vsengineering.lk/#services</loc>
+        <lastmod>2024-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Contact Section -->
+    <url>
+        <loc>https://vsengineering.lk/#contact</loc>
+        <lastmod>2024-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- VS Fan Service -->
+    <url>
+        <loc>https://vsengineering.lk/services/vs-fan</loc>
+        <lastmod>2024-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- AC & CCTV Services -->
+    <url>
+        <loc>https://vsengineering.lk/services/ac-cctv</loc>
+        <lastmod>2024-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Electrical Engineering -->
+    <url>
+        <loc>https://vsengineering.lk/services/electrical-engineering</loc>
+        <lastmod>2024-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Equipment Repair -->
+    <url>
+        <loc>https://vsengineering.lk/services/equipment-repair</loc>
+        <lastmod>2024-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Aluminum Fabrication -->
+    <url>
+        <loc>https://vsengineering.lk/services/aluminum-fabrication</loc>
+        <lastmod>2024-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>
