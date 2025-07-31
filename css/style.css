@@ -414,11 +414,20 @@ body[data-theme="dark"] .hero::before {
   margin-bottom: 1.5rem;
   line-height: 1.2;
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.2);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8), 6px 6px 12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4), 0 0 50px
+    rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding: 0.5rem 0;
 }
 
 body[data-theme="dark"] .hero-title {
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.4), 0 0 40px rgba(96, 165, 250, 0.1);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9), 6px 6px 15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6), 0 0 60px
+    rgba(96, 165, 250, 0.2);
+  background: linear-gradient(135deg, rgba(249, 250, 251, 0.98), rgba(209, 213, 219, 0.95));
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .hero-subtitle {
@@ -427,11 +436,18 @@ body[data-theme="dark"] .hero-title {
   margin-bottom: 2rem;
   line-height: 1.6;
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7), 4px 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 body[data-theme="dark"] .hero-subtitle {
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8), 4px 4px 10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 0, 0, 0.5);
+  background: rgba(31, 41, 55, 0.2);
+  border: 1px solid rgba(55, 65, 81, 0.3);
 }
 
 .hero-buttons {
@@ -451,34 +467,25 @@ body[data-theme="dark"] .hero-subtitle {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-}
-
-.btn-primary {
-  background: var(--primary-color);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background: var(--accent-color);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-}
-
-.btn-secondary:hover {
-  background: var(--primary-color);
-  color: #ffffff;
-  transform: translateY(-2px);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-features {
   display: flex;
   gap: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="dark"] .hero-features {
+  background: rgba(31, 41, 55, 0.15);
+  border: 1px solid rgba(55, 65, 81, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .feature-item {
@@ -487,16 +494,18 @@ body[data-theme="dark"] .hero-subtitle {
   gap: 8px;
   color: var(--text-light);
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.6), 3px 3px 6px rgba(0, 0, 0, 0.4);
+  font-weight: 500;
 }
 
 body[data-theme="dark"] .feature-item {
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8), 3px 3px 8px rgba(0, 0, 0, 0.6);
 }
 
 .feature-item i {
   color: var(--secondary-color);
   font-size: 1.2rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .hero-image {
@@ -506,23 +515,21 @@ body[data-theme="dark"] .feature-item {
 }
 
 .hero-card {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
   padding: 3rem 2rem;
   border-radius: 20px;
-  box-shadow: 0 20px 60px var(--shadow-light);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2);
   text-align: center;
   transform: rotate(5deg);
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.hero-card:hover {
-  transform: rotate(0deg) scale(1.05);
-}
-
-.hero-card i {
-  font-size: 4rem;
-  color: var(--secondary-color);
-  margin-bottom: 1rem;
+body[data-theme="dark"] .hero-card {
+  background: rgba(31, 41, 55, 0.9);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(55, 65, 81, 0.3);
+  border: 1px solid rgba(55, 65, 81, 0.4);
 }
 
 .hero-card h3 {
@@ -530,11 +537,13 @@ body[data-theme="dark"] .feature-item {
   color: var(--text-dark);
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-card p {
   color: var(--text-light);
   transition: color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Section Styles */
@@ -1380,5 +1389,413 @@ body {
   body[data-theme="dark"] .hero {
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.55) 0%, rgba(30, 41, 59, 0.55) 100%),
       url("../images/electrical-background.jpg");
+  }
+}
+
+/* Social Media Links */
+.social-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 480px) {
+  .social-links {
+    justify-content: center;
+  }
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--secondary-color);
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.social-icon:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+body[data-theme="dark"] .social-icon {
+  background: var(--spark-color);
+  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+}
+
+body[data-theme="dark"] .social-icon:hover {
+  background: var(--secondary-color);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+}
+
+.youtube-icon {
+  background: linear-gradient(135deg, #ff0000, #cc0000) !important;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3) !important;
+}
+
+.youtube-icon:hover {
+  background: linear-gradient(135deg, #cc0000, #990000) !important;
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4) !important;
+}
+
+.tiktok-icon {
+  background: linear-gradient(135deg, #000000, #ff0050) !important;
+  box-shadow: 0 4px 15px rgba(255, 0, 80, 0.3) !important;
+}
+
+.tiktok-icon:hover {
+  background: linear-gradient(135deg, #ff0050, #000000) !important;
+  box-shadow: 0 6px 20px rgba(255, 0, 80, 0.4) !important;
+}
+
+body[data-theme="dark"] .youtube-icon {
+  background: linear-gradient(135deg, #ff4444, #ff0000) !important;
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3) !important;
+}
+
+body[data-theme="dark"] .youtube-icon:hover {
+  background: linear-gradient(135deg, #ff0000, #cc0000) !important;
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4) !important;
+}
+
+body[data-theme="dark"] .tiktok-icon {
+  background: linear-gradient(135deg, #333333, #ff0050) !important;
+  box-shadow: 0 4px 15px rgba(255, 0, 80, 0.3) !important;
+}
+
+body[data-theme="dark"] .tiktok-icon:hover {
+  background: linear-gradient(135deg, #ff0050, #333333) !important;
+  box-shadow: 0 6px 20px rgba(255, 0, 80, 0.4) !important;
+}
+
+/* Contact item social link styling */
+.contact-item .social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-item .social-link:hover {
+  transform: translateX(5px);
+}
+
+/* Social Media Widget Section */
+.social-widget {
+  padding: 6rem 0;
+  background: var(--light-bg);
+  transition: background-color 0.3s ease;
+}
+
+.social-widget-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.facebook-widget {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.facebook-widget h3 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.contact-widget {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.contact-widget h3 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.quick-contact-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.phone-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.phone-btn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.whatsapp-btn {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #128c7e, #075e54);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.email-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.email-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.facebook-btn {
+  background: linear-gradient(135deg, #1877f2, #166fe5);
+}
+
+.facebook-btn:hover {
+  background: linear-gradient(135deg, #166fe5, #1464d8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+}
+
+.youtube-btn {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+}
+
+.youtube-btn:hover {
+  background: linear-gradient(135deg, #cc0000, #990000);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+.tiktok-btn {
+  background: linear-gradient(135deg, #000000, #ff0050);
+}
+
+.tiktok-btn:hover {
+  background: linear-gradient(135deg, #ff0050, #000000);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 80, 0.4);
+}
+
+.business-hours {
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.business-hours h4 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.business-hours p {
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.business-hours i {
+  color: var(--primary-color);
+  width: 16px;
+}
+
+/* WhatsApp Link Styling */
+.whatsapp-link {
+  color: #25d366;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.whatsapp-link:hover {
+  color: #128c7e;
+  transform: translateX(5px);
+}
+
+.whatsapp-link::before {
+  content: "💬";
+  font-size: 1.1rem;
+}
+
+/* Facebook Widget Responsive */
+.fb-page {
+  width: 100% !important;
+}
+
+.fb-page span {
+  width: 100% !important;
+}
+
+.fb-page iframe {
+  width: 100% !important;
+}
+
+/* Dark Theme Adjustments for Social Widget */
+body[data-theme="dark"] .facebook-widget,
+body[data-theme="dark"] .contact-widget {
+  background: var(--white);
+  box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+body[data-theme="dark"] .business-hours {
+  background: var(--light-bg);
+}
+
+/* Responsive Design for Social Widget */
+@media screen and (max-width: 768px) {
+  .social-widget-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .quick-contact-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .contact-btn {
+    padding: 0.875rem;
+    font-size: 0.9rem;
+  }
+
+  .facebook-widget,
+  .contact-widget {
+    padding: 1.5rem;
+  }
+
+  .fb-page {
+    height: 400px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social-widget {
+    padding: 4rem 0;
+  }
+
+  .facebook-widget,
+  .contact-widget {
+    padding: 1.25rem;
+  }
+
+  .contact-btn {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .business-hours {
+    padding: 1.25rem;
+  }
+
+  .fb-page {
+    height: 350px !important;
+  }
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse-whatsapp 2s infinite;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+}
+
+/* Hide floating button on mobile to avoid overlap */
+@media screen and (max-width: 768px) {
+  .floating-whatsapp {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
   }
 }
