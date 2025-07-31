@@ -3,184 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VS Engineering Solutions | Electrical & Engineering Services</title>
-    [cite_start]<meta name="description" content="VS Engineering Solutions offers expert electrical engineering services, including industrial wiring, AC & CCTV installation, panel board design, motor rewinding, and high-quality aluminum fabrication. [cite: 17, 29, 30, 32]">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Teko:wght@400;700&display=swap" rel="stylesheet">
-
+    <meta name="description" content="VS Engineering Solutions - Professional electrical engineering services including VS Fan brand, AC installation, electrical wiring, equipment repair, and aluminum fabrication. Available 24/7.">
+    <meta name="keywords" content="electrical engineering, VS Fan, AC installation, CCTV, electrical wiring, motor rewinding, aluminum fabrication, Sri Lanka">
+    <title>VS Engineering Solutions - Professional Electrical Engineering Services</title>
     <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <img src="assets/images/logo.png" alt="VS Engineering Solutions Logo" style="height: 50px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.jpg" alt="VS Engineering Solutions Logo" class="logo-img">
+                <span class="logo-text">VS Engineering Solutions</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark theme">
+                <i class="fas fa-moon" id="theme-icon"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center text-white">
-        <div class="container">
-            <h1 class="display-3">VS Engineering Solutions</h1>
-            [cite_start]<p class="lead">Delivering Reliable, High-Quality, and Affordable Engineering Solutions [cite: 17]</p>
-            <a href="#services" class="btn btn-primary btn-lg mt-3">Explore Our Services</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Professional Electrical Engineering Solutions</h1>
+                <p class="hero-subtitle">Delivering reliable, high-quality, and affordable engineering solutions with 24/7 availability since 2021</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get Quote</a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <span>24/7 Available</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Expert Technicians</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Quality Assured</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>VS Engineering Solutions</h3>
+                    <p>Your trusted electrical engineering partner</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <main>
-        <section id="about" class="py-5 fade-in">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <h2 class="section-title">About Our Company</h2>
-                        [cite_start]<p>Established in December 2021[cite: 9], VS Engineering Solutions is committed to delivering reliable, high-quality, and affordable engineering solutions. [cite_start]With a team of experienced professionals and a focus on customer satisfaction, we offer a comprehensive range of services for residential, commercial, and industrial projects[cite: 17, 18, 19, 75].</p>
-                        [cite_start]<p>Our work is always performed under the supervision of a qualified Electrical Engineer, ensuring safety and quality[cite: 21].</p>
-                    </div>
-                    <div class="col-lg-6">
-                        [cite_start]<h3 class="mt-4 mt-lg-0">Our Core Values [cite: 24]</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Honesty and ethics in all activities.</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Prioritizing customer needs and satisfaction.</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Encouraging creativity and new ideas.</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Working together to achieve common goals.</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Taking responsibility for actions and outcomes.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="py-5 bg-light fade-in">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Our Services</h2>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card h-100">
-                            <div class="card-body">
-                                [cite_start]<h4 class="card-title">VS Fan - Our Own Brand [cite: 28]</h4>
-                                <p class="card-text">We proudly present VS Fans, our own brand of high-performance stand fans designed for durability, efficiency, and style. [cite_start]Assembled with precision, every fan delivers powerful airflow with quiet operation[cite: 35, 36].</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card h-100">
-                            <div class="card-body">
-                                [cite_start]<h4 class="card-title">AC & CCTV Services [cite: 29]</h4>
-                                [cite_start]<p class="card-text">We specialize in reliable installation and maintenance for AC (split, cassette, industrial) and CCTV systems for homes, offices, and commercial spaces, ensuring optimal performance[cite: 37, 79].</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card h-100">
-                            <div class="card-body">
-                                [cite_start]<h4 class="card-title">Electrical Engineering [cite: 30]</h4>
-                                [cite_start]<p class="card-text">Our core services include safe and compliant house & industrial wiring, custom panel board design, and expert motor rewinding and generator maintenance[cite: 41, 44, 46].</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card h-100">
-                            <div class="card-body">
-                                [cite_start]<h4 class="card-title">Equipment Repair & Sales [cite: 31]</h4>
-                                [cite_start]<p class="card-text">We offer efficient repair for electrical equipment and sell a wide range of spare parts and accessories both in-store and online for your convenience[cite: 50, 59].</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-card h-100">
-                            <div class="card-body">
-                                [cite_start]<h4 class="card-title">Aluminum Fabrication [cite: 32]</h4>
-                                [cite_start]<p class="card-text">High-quality aluminum fabrication and installation for windows, doors, office partitions, pantry cupboards, and other custom structures for any project[cite: 67, 70, 71, 72].</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="service-card h-100 service-card-unique">
-                             <div class="card-body">
-                                [cite_start]<h4 class="card-title">What Makes Us Unique? [cite: 21]</h4>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-clock-history me-2"></i>24-Hour Availability</li>
-                                    <li class="mb-2"><i class="bi bi-person-check-fill me-2"></i>Engineer Supervision</li>
-                                    <li class="mb-2"><i class="bi bi-tools me-2"></i>Skilled & Friendly Technicians</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-5 fade-in">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Get In Touch</h2>
-                <div class="row">
-                    <div class="col-lg-5 mb-4 mb-lg-0">
-                        <h4 class="mb-3">Contact Information</h4>
-                        <div class="contact-info">
-                            [cite_start]<p><i class="bi bi-geo-alt-fill"></i> <strong>Address:</strong><br>58/A, Gamini Mawatha, Koavinna, Andiambalalama [cite: 10]</p>
-                            [cite_start]<p><i class="bi bi-telephone-fill"></i> <strong>Phone:</strong><br><a href="tel:0740157744">0740157744</a> [cite: 11]</p>
-                            [cite_start]<p><i class="bi bi-envelope-fill"></i> <strong>Email:</strong><br><a href="mailto:vselectrical314@gmail.com">vselectrical314@gmail.com</a> [cite: 12]</p>
-                             [cite_start]<p><i class="bi bi-briefcase-fill"></i> <strong>Registration:</strong><br>WAA16121 [cite: 13]</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                         <h4 class="mb-3">Send Us a Message</h4>
-                        <form>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Subject" required>
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-dark text-white text-center py-4">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <p>&copy; 2025 VS Engineering Solutions. All Rights Reserved.</p>
-            <p>Designed with care.</p>
+            <div class="section-header">
+                <h2 class="section-title">About VS Engineering Solutions</h2>
+                <p class="section-subtitle">Committed to excellence since December 2021</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>At VS Engineering Solutions, we are committed to delivering reliable, high-quality and affordable engineering solutions for our clients. With a team of experienced professionals and a focus on customer satisfaction, we offer a comprehensive range of electrical engineering services.</p>
+                    
+                    <h3>What Makes Us Unique</h3>
+                    <ul class="unique-features">
+                        <li><i class="fas fa-clock"></i> 24 hours open - Always available when you need us</li>
+                        <li><i class="fas fa-user-graduate"></i> All services supervised by qualified Electrical Engineers</li>
+                        <li><i class="fas fa-fan"></i> VS Fan - Our own brand of high-performance fans</li>
+                        <li><i class="fas fa-handshake"></i> Friendly services by skilled technicians</li>
+                    </ul>
+
+                    <div class="company-info">
+                        <div class="info-item">
+                            <strong>Established:</strong> December 2021
+                        </div>
+                        <div class="info-item">
+                            <strong>Registration:</strong> WAA16121
+                        </div>
+                        <div class="info-item">
+                            <strong>Location:</strong> 58/A, Gamini Mawatha, Koavinna, Andiambalama
+                        </div>
+                    </div>
+                </div>
+                <div class="about-values">
+                    <h3>Our Core Values</h3>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <i class="fas fa-heart"></i>
+                            <h4>Honesty & Ethics</h4>
+                            <p>Being honest and ethical in all business activities</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Customer Focus</h4>
+                            <p>Prioritizing customer needs and satisfaction</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Innovation</h4>
+                            <p>Encouraging creativity and new ideas</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Teamwork</h4>
+                            <p>Working together to achieve goals</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Responsibility</h4>
+                            <p>Taking responsibility for actions and outcomes</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Sustainability</h4>
+                            <p>Caring for the environment and long-term impact</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive electrical engineering solutions for all your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <h3>VS Fan - Our Brand</h3>
+                    <p>High-performance stand fans designed for durability, efficiency, and style. Available with pure copper or aluminum-wound motors, sturdy ABS bodies, and sleek designs.</p>
+                    <ul class="service-features">
+                        <li>Energy efficient operation</li>
+                        <li>Quiet performance</li>
+                        <li>Customizable options</li>
+                        <li>Modern technology</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>AC & CCTV Services</h3>
+                    <p>Professional air conditioning and CCTV installation & maintenance services for homes, offices, and commercial spaces with expert advice and after-service support.</p>
+                    <ul class="service-features">
+                        <li>Split & cassette AC units</li>
+                        <li>Industrial systems</li>
+                        <li>CCTV installation</li>
+                        <li>Regular maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Engineering</h3>
+                    <p>Complete electrical solutions including house & industrial wiring, panel board designing, and motor rewinding & generator maintenance services.</p>
+                    <ul class="service-features">
+                        <li>House & industrial wiring</li>
+                        <li>Panel board designing</li>
+                        <li>Motor rewinding</li>
+                        <li>Generator maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Equipment Repair & Parts</h3>
+                    <p>Reliable electrical equipment repair services and online/in-store spare parts for motors, pumps, switchgear, transformers, and household appliances.</p>
+                    <ul class="service-features">
+                        <li>Equipment diagnostics</li>
+                        <li>Quality repair methods</li>
+                        <li>Online & in-store parts</li>
+                        <li>Fast delivery</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Aluminum Fabrication</h3>
+                    <p>High-quality aluminum fabrication and installation services for residential, commercial, and industrial projects with precision workmanship.</p>
+                    <ul class="service-features">
+                        <li>Windows & doors</li>
+                        <li>Office partitions</li>
+                        <li>Pantry cupboards</li>
+                        <li>Custom structures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Get in touch for professional electrical engineering solutions</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to start your project? Contact us today for a consultation and quote.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>0740157744</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>vselectrical314@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>58/A, Gamini Mawatha, Koavinna, Andiambalama</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Availability</h4>
+                                <p>24/7 Service Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <h3>Send us a Message</h3>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Select Service</option>
+                                <option value="vs-fan">VS Fan</option>
+                                <option value="ac-cctv">AC & CCTV Services</option>
+                                <option value="electrical">Electrical Engineering</option>
+                                <option value="repair">Equipment Repair & Parts</option>
+                                <option value="aluminum">Aluminum Fabrication</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="VS Engineering Solutions Logo" class="footer-logo-img">
+                        <span class="footer-logo-text">VS Engineering Solutions</span>
+                    </div>
+                    <p>Professional electrical engineering solutions with 24/7 availability. Your trusted partner since 2021.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">VS Fan Brand</a></li>
+                        <li><a href="#services">AC & CCTV Services</a></li>
+                        <li><a href="#services">Electrical Engineering</a></li>
+                        <li><a href="#services">Equipment Repair</a></li>
+                        <li><a href="#services">Aluminum Fabrication</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 0740157744</li>
+                        <li><i class="fas fa-envelope"></i> vselectrical314@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 58/A, Gamini Mawatha, Koavinna</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Available</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li>Reg: WAA16121</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VS Engineering Solutions. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
