@@ -2461,3 +2461,30 @@ body[data-theme="dark"] .hero::after {
     font-size: 1rem;
   }
 }
+
+/*
+CUSTOM FIXES
+*/
+/* Initial state for navbar text (over transparent hero) */
+.navbar .logo-text,
+.navbar .nav-link,
+.navbar .theme-toggle {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* When navbar is scrolled (light theme) */
+.navbar.scrolled .logo-text,
+.navbar.scrolled .nav-link,
+.navbar.scrolled .theme-toggle {
+    color: var(--text-dark);
+    text-shadow: none;
+}
+
+/* When navbar is in dark theme (scrolled or not) */
+body[data-theme="dark"] .navbar .logo-text,
+body[data-theme="dark"] .navbar .nav-link,
+body[data-theme="dark"] .navbar .theme-toggle {
+    color: var(--text-dark);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(96, 165, 250, 0.2);
+}
