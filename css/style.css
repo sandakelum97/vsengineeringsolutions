@@ -49,7 +49,7 @@ body[data-theme="dark"] {
   color: #f9fafb;
 }
 
-/* Electrical Sparks Animation */
+/* Enhanced Electrical Sparks Animation */
 .electrical-sparks {
   position: fixed;
   top: 0;
@@ -63,78 +63,66 @@ body[data-theme="dark"] {
 
 .spark {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   background: var(--spark-color);
   border-radius: 50%;
-  box-shadow: 0 0 20px var(--spark-color), 0 0 40px var(--spark-color), 0 0 60px var(--spark-color);
+  box-shadow: 0 0 30px var(--spark-color), 0 0 60px var(--spark-color), 0 0 90px var(--spark-color);
   opacity: 0;
 }
 
 .spark::before {
   content: "";
   position: absolute;
-  top: -2px;
-  left: -2px;
-  width: 8px;
-  height: 8px;
+  top: -3px;
+  left: -3px;
+  width: 12px;
+  height: 12px;
   background: var(--spark-color);
   border-radius: 50%;
-  opacity: 0.9;
+  opacity: 0.8;
+  animation: pulse 2s infinite ease-in-out;
 }
 
 .spark::after {
   content: "";
   position: absolute;
-  top: -4px;
-  left: -4px;
-  width: 12px;
-  height: 12px;
+  top: -6px;
+  left: -6px;
+  width: 18px;
+  height: 18px;
   background: radial-gradient(circle, var(--spark-color) 0%, transparent 70%);
   border-radius: 50%;
-  opacity: 0.7;
+  opacity: 0.6;
+  animation: glow 3s infinite ease-in-out;
 }
 
-.spark-1 {
-  top: 20%;
-  left: 10%;
-  animation: sparkle 4s infinite ease-in-out;
-  animation-delay: 0s;
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
 }
 
-.spark-2 {
-  top: 60%;
-  left: 80%;
-  animation: sparkle 3s infinite ease-in-out;
-  animation-delay: 1s;
-}
-
-.spark-3 {
-  top: 30%;
-  left: 70%;
-  animation: sparkle 5s infinite ease-in-out;
-  animation-delay: 2s;
-}
-
-.spark-4 {
-  top: 80%;
-  left: 20%;
-  animation: sparkle 3.5s infinite ease-in-out;
-  animation-delay: 0.5s;
-}
-
-.spark-5 {
-  top: 40%;
-  left: 40%;
-  animation: sparkle 4.5s infinite ease-in-out;
-  animation-delay: 1.5s;
-}
-
-.spark-6 {
-  top: 70%;
-  left: 60%;
-  animation: sparkle 3.8s infinite ease-in-out;
-  animation-delay: 2.5s;
+@keyframes glow {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  33% {
+    transform: scale(1.3) rotate(120deg);
+    opacity: 0.9;
+  }
+  66% {
+    transform: scale(1.1) rotate(240deg);
+    opacity: 0.7;
+  }
 }
 
 @keyframes sparkle {
@@ -143,35 +131,93 @@ body[data-theme="dark"] {
     opacity: 0;
     transform: scale(0) rotate(0deg);
   }
-  10% {
-    opacity: 1;
-    transform: scale(1.5) rotate(90deg);
+  5% {
+    opacity: 0.3;
+    transform: scale(0.5) rotate(45deg);
   }
-  20% {
-    opacity: 0.9;
+  15% {
+    opacity: 1;
     transform: scale(2) rotate(180deg);
   }
-  30% {
+  25% {
     opacity: 0.8;
-    transform: scale(1.5) rotate(270deg);
+    transform: scale(2.5) rotate(270deg);
+  }
+  35% {
+    opacity: 0.9;
+    transform: scale(1.8) rotate(360deg);
   }
   50% {
     opacity: 1;
-    transform: scale(2.5) rotate(360deg);
+    transform: scale(3) rotate(450deg);
   }
-  70% {
-    opacity: 0.6;
-    transform: scale(1.2) rotate(450deg);
+  65% {
+    opacity: 0.7;
+    transform: scale(2.2) rotate(540deg);
   }
-  90% {
-    opacity: 0.3;
-    transform: scale(0.8) rotate(540deg);
+  80% {
+    opacity: 0.4;
+    transform: scale(1.5) rotate(630deg);
   }
+  95% {
+    opacity: 0.1;
+    transform: scale(0.8) rotate(720deg);
+  }
+}
+
+.spark-1 {
+  top: 15%;
+  left: 8%;
+  animation: sparkle 5s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+.spark-2 {
+  top: 65%;
+  left: 85%;
+  animation: sparkle 4s infinite ease-in-out;
+  animation-delay: 1.2s;
+}
+
+.spark-3 {
+  top: 25%;
+  left: 75%;
+  animation: sparkle 6s infinite ease-in-out;
+  animation-delay: 2.5s;
+}
+
+.spark-4 {
+  top: 85%;
+  left: 15%;
+  animation: sparkle 4.5s infinite ease-in-out;
+  animation-delay: 0.8s;
+}
+
+.spark-5 {
+  top: 45%;
+  left: 35%;
+  animation: sparkle 5.5s infinite ease-in-out;
+  animation-delay: 1.8s;
+}
+
+.spark-6 {
+  top: 75%;
+  left: 65%;
+  animation: sparkle 4.2s infinite ease-in-out;
+  animation-delay: 3s;
 }
 
 /* Enhanced spark effect for dark theme */
 body[data-theme="dark"] .spark {
-  box-shadow: 0 0 25px var(--spark-color), 0 0 50px var(--spark-color), 0 0 75px var(--spark-color);
+  box-shadow: 0 0 40px var(--spark-color), 0 0 80px var(--spark-color), 0 0 120px var(--spark-color);
+}
+
+body[data-theme="dark"] .spark::before {
+  opacity: 1;
+}
+
+body[data-theme="dark"] .spark::after {
+  opacity: 0.8;
 }
 
 /* Navigation */
@@ -309,7 +355,7 @@ body[data-theme="dark"] .navbar.scrolled {
 /* Hero Section */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, rgba(248, 250, 252, 0.2) 0%, rgba(226, 232, 240, 0.2) 100%),
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.45) 0%, rgba(226, 232, 240, 0.45) 100%),
     url("../images/electrical-background.jpg");
   background-size: cover;
   background-position: center;
@@ -322,7 +368,7 @@ body[data-theme="dark"] .navbar.scrolled {
 }
 
 body[data-theme="dark"] .hero {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.2) 0%, rgba(30, 41, 59, 0.2) 100%),
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.45) 0%, rgba(30, 41, 59, 0.45) 100%),
     url("../images/electrical-background.jpg");
   background-size: cover;
   background-position: center;
@@ -367,8 +413,12 @@ body[data-theme="dark"] .hero::before {
   color: var(--text-dark);
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  transition: color 0.3s ease;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme="dark"] .hero-title {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 0, 0, 0.4), 0 0 40px rgba(96, 165, 250, 0.1);
 }
 
 .hero-subtitle {
@@ -376,8 +426,12 @@ body[data-theme="dark"] .hero::before {
   color: var(--text-light);
   margin-bottom: 2rem;
   line-height: 1.6;
-  transition: color 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="dark"] .hero-subtitle {
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -432,8 +486,12 @@ body[data-theme="dark"] .hero::before {
   align-items: center;
   gap: 8px;
   color: var(--text-light);
-  transition: color 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+body[data-theme="dark"] .feature-item {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .feature-item i {
@@ -935,9 +993,35 @@ body[data-theme="dark"] .developer-credit {
   }
 }
 
-/* Theme transition animation */
+/* Smooth Theme Transitions */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color
+    0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero {
+  transition: background-image 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spark {
+  transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme Toggle Enhanced Animation */
+.theme-toggle {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle i {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Responsive Design */
@@ -1271,7 +1355,7 @@ body[data-theme="dark"] .developer-credit {
 /* Mobile optimizations for hero background */
 @media screen and (max-width: 768px) {
   .hero {
-    background: linear-gradient(135deg, rgba(248, 250, 252, 0.3) 0%, rgba(226, 232, 240, 0.3) 100%),
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.5) 0%, rgba(226, 232, 240, 0.5) 100%),
       url("../images/electrical-background.jpg");
     background-attachment: scroll;
     background-size: cover;
@@ -1279,7 +1363,7 @@ body[data-theme="dark"] .developer-credit {
   }
 
   body[data-theme="dark"] .hero {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.3) 0%, rgba(30, 41, 59, 0.3) 100%),
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 41, 59, 0.5) 100%),
       url("../images/electrical-background.jpg");
     background-attachment: scroll;
   }
@@ -1287,14 +1371,14 @@ body[data-theme="dark"] .developer-credit {
 
 @media screen and (max-width: 480px) {
   .hero {
-    background: linear-gradient(135deg, rgba(248, 250, 252, 0.4) 0%, rgba(226, 232, 240, 0.4) 100%),
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.55) 0%, rgba(226, 232, 240, 0.55) 100%),
       url("../images/electrical-background.jpg");
     background-size: cover;
     background-position: center;
   }
 
   body[data-theme="dark"] .hero {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.4) 0%, rgba(30, 41, 59, 0.4) 100%),
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.55) 0%, rgba(30, 41, 59, 0.55) 100%),
       url("../images/electrical-background.jpg");
   }
 }
