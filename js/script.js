@@ -15,7 +15,7 @@ document.querySelectorAll(".nav-link").forEach((link) => {
   })
 })
 
-// Dark Theme Toggle - Completely Fixed and Simplified
+// Dark Theme Toggle with Enhanced Smooth Transitions
 const themeToggle = document.getElementById("theme-toggle")
 const themeIcon = document.getElementById("theme-icon")
 
@@ -24,6 +24,9 @@ let isDarkTheme = localStorage.getItem("theme") === "dark"
 
 function setTheme(dark) {
   console.log("Setting theme to:", dark ? "dark" : "light")
+
+  // Add transition class to body for smooth theme change
+  document.body.classList.add("theme-transitioning")
 
   if (dark) {
     document.body.setAttribute("data-theme", "dark")
@@ -36,45 +39,170 @@ function setTheme(dark) {
   }
 
   isDarkTheme = dark
+
+  // Remove transition class after animation completes
+  setTimeout(() => {
+    document.body.classList.remove("theme-transitioning")
+  }, 600)
+
+  // Update progress bar theme
+  updateProgressBarTheme()
+
+  // Update spark colors smoothly
+  updateSparkColors()
 }
 
 // Apply saved theme immediately
 setTheme(isDarkTheme)
 
-// Theme toggle click handler
+// Theme toggle click handler with enhanced animation
 themeToggle.addEventListener("click", () => {
   console.log("Theme toggle clicked. Current:", isDarkTheme ? "dark" : "light")
+
+  // Disable button temporarily to prevent rapid clicking
+  themeToggle.disabled = true
 
   // Toggle theme
   setTheme(!isDarkTheme)
 
-  // Add rotation animation
-  themeToggle.style.transform = isDarkTheme ? "rotate(-360deg)" : "rotate(360deg)"
+  // Enhanced rotation animation with bounce effect
+  themeToggle.style.transform = isDarkTheme ? "rotate(-720deg) scale(1.2)" : "rotate(720deg) scale(1.2)"
+  themeToggle.style.transition = "transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
 
-  // Reset animation
+  // Reset animation and re-enable button
   setTimeout(() => {
-    themeToggle.style.transform = "rotate(0deg)"
-  }, 300)
+    themeToggle.style.transform = "rotate(0deg) scale(1)"
+    themeToggle.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+    themeToggle.disabled = false
+  }, 600)
 
   console.log("Theme changed to:", isDarkTheme ? "dark" : "light")
 })
 
-// Enhanced electrical sparks animation with more visibility
+// Update spark colors based on theme
+function updateSparkColors() {
+  const sparks = document.querySelectorAll(".spark")
+  sparks.forEach((spark) => {
+    spark.style.transition = "box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
+  })
+}
+
+// Enhanced electrical sparks animation with more dynamic effects
 function createAdditionalSparks() {
   const sparksContainer = document.querySelector(".electrical-sparks")
   if (!sparksContainer) return
 
-  // Create additional random sparks with enhanced visibility
-  for (let i = 7; i <= 15; i++) {
+  // Create additional random sparks with enhanced visibility and animations
+  for (let i = 7; i <= 20; i++) {
     const spark = document.createElement("div")
     spark.className = `spark spark-${i}`
+
+    // Random positioning
     spark.style.top = Math.random() * 100 + "%"
     spark.style.left = Math.random() * 100 + "%"
-    spark.style.animationDuration = Math.random() * 2 + 1.5 + "s" // Faster animation
-    spark.style.animationDelay = Math.random() * 2 + "s"
-    spark.style.animation = `sparkle ${Math.random() * 2 + 1.5}s infinite ease-in-out`
-    spark.style.animationDelay = Math.random() * 2 + "s"
+
+    // Dynamic animation properties
+    const duration = Math.random() * 3 + 2 // 2-5 seconds
+    const delay = Math.random() * 4 // 0-4 seconds delay
+
+    spark.style.animationDuration = duration + "s"
+    spark.style.animationDelay = delay + "s"
+    spark.style.animation = `sparkle ${duration}s infinite ease-in-out`
+    spark.style.animationDelay = delay + "s"
+
+    // Add random scale for variety
+    const scale = Math.random() * 0.8 + 0.6 // 0.6-1.4 scale
+    spark.style.transform = `scale(${scale})`
+
     sparksContainer.appendChild(spark)
+  }
+
+  // Create moving sparks that travel across the screen
+  createMovingSparks()
+}
+
+// Create sparks that move across the screen
+function createMovingSparks() {
+  const sparksContainer = document.querySelector(".electrical-sparks")
+  if (!sparksContainer) return
+
+  for (let i = 21; i <= 25; i++) {
+    const movingSpark = document.createElement("div")
+    movingSpark.className = `spark moving-spark-${i}`
+
+    // Start from random edge
+    const startSide = Math.floor(Math.random() * 4) // 0-3 for top, right, bottom, left
+    let startX, startY, endX, endY
+
+    switch (startSide) {
+      case 0: // Top
+        startX = Math.random() * 100
+        startY = -5
+        endX = Math.random() * 100
+        endY = 105
+        break
+      case 1: // Right
+        startX = 105
+        startY = Math.random() * 100
+        endX = -5
+        endY = Math.random() * 100
+        break
+      case 2: // Bottom
+        startX = Math.random() * 100
+        startY = 105
+        endX = Math.random() * 100
+        endY = -5
+        break
+      case 3: // Left
+        startX = -5
+        startY = Math.random() * 100
+        endX = 105
+        endY = Math.random() * 100
+        break
+    }
+
+    movingSpark.style.left = startX + "%"
+    movingSpark.style.top = startY + "%"
+
+    // Create keyframe animation for movement
+    const animationName = `moveSpark${i}`
+    const duration = Math.random() * 8 + 6 // 6-14 seconds
+    const delay = Math.random() * 5 // 0-5 seconds delay
+
+    const keyframes = `
+      @keyframes ${animationName} {
+        0% {
+          left: ${startX}%;
+          top: ${startY}%;
+          opacity: 0;
+          transform: scale(0);
+        }
+        10% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        90% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          left: ${endX}%;
+          top: ${endY}%;
+          opacity: 0;
+          transform: scale(0);
+        }
+      }
+    `
+
+    // Add keyframes to stylesheet
+    const style = document.createElement("style")
+    style.textContent = keyframes
+    document.head.appendChild(style)
+
+    movingSpark.style.animation = `${animationName} ${duration}s infinite linear`
+    movingSpark.style.animationDelay = delay + "s"
+
+    sparksContainer.appendChild(movingSpark)
   }
 }
 
@@ -648,3 +776,28 @@ if ("getBattery" in navigator) {
     }
   })
 }
+
+// Add enhanced theme transition styles
+const themeTransitionStyle = document.createElement("style")
+themeTransitionStyle.textContent = `
+  .theme-transitioning {
+    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  .theme-transitioning * {
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  .theme-transitioning .spark {
+    transition: box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  .theme-transitioning .hero {
+    transition: background-image 0.7s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+`
+document.head.appendChild(themeTransitionStyle)
