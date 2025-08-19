@@ -801,3 +801,29 @@ themeTransitionStyle.textContent = `
   }
 `
 document.head.appendChild(themeTransitionStyle)
+
+// Functionality for the image pop-up
+const popup = document.getElementById('image-popup');
+const closeBtn = document.querySelector('.close-btn');
+
+function showPopup() {
+    popup.classList.add('active');
+}
+
+function hidePopup() {
+    popup.classList.remove('active');
+}
+
+// Show the popup after a 2-second delay
+// You can adjust this timing as needed.
+setTimeout(showPopup, 2000); 
+
+// Close the popup when the close button is clicked
+closeBtn.addEventListener('click', hidePopup);
+
+// Close the popup when clicking outside the image
+window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+        hidePopup();
+    }
+});
